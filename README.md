@@ -1,6 +1,6 @@
 # AWS - Web demo
 
-![TF grph](graph.svg "Schema")
+![TF grph](graph.png "Schema")
 
 ``Version 1.0.0``   
 
@@ -109,7 +109,7 @@ Terraform will perform the following actions:
 
   - aws_route_table.private_route_table
 
-  - aws_route_table_association.pr_1_subnet_eu_west_1a_association
+  - aws_route_table_association.private_subnet_association
 
   - aws_security_group.elb_sg
 
@@ -119,7 +119,9 @@ Terraform will perform the following actions:
 
   - module.ec2-instance.aws_instance.minion[0]
 
-  - module.ec2-instance.aws_instance.minion[1]
+  - ....
+
+  - module.ec2-instance.aws_instance.minion[X]
 ```
 ### Maintainer
 `Simian Labs` - (https://github.com/simianlabs)  
