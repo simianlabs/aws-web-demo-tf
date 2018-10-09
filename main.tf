@@ -3,7 +3,7 @@ module "ec2-instance" {
 
   instance_count = "${var.instanceCount}"
 
-  name                        = "minion-${var.saltEnv}"
+  name                        = "${var.keyName}-${var.saltEnv}"
   ami                         = "${var.ami}"
   instance_type               = "${var.instanceSize}"
   subnet_id                   = "${aws_subnet.web_subnet.id}"
