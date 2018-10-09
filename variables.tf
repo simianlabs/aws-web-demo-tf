@@ -1,9 +1,9 @@
-variable "aws_access_key" {
-  description = "Your AWS Access key"
-}
-variable "aws_secret_key" {
-  description = "Your AWS Secret key"
-}
+# variable "aws_access_key" {
+#   description = "Your AWS Access key"
+# }
+# variable "aws_secret_key" {
+#   description = "Your AWS Secret key"
+# }
 variable "awsRegion" {
   description = "AWS Default Region"
   default     = "eu-west-1"
