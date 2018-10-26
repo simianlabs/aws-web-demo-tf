@@ -1,0 +1,31 @@
+awsRegion = "eu-west-1"
+
+# Network
+
+vpcID = "vpc-000000"
+
+vpcCIDR = "172.31.0.0/16"
+
+subnetName = "web_subnet"
+
+subnetCIDR = "172.31.16.0/20"
+
+public_subnet = "subnet-000000"
+
+public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQD3F6tyPEFEzV0LX3X8BsXdMsQz1x2cEikKDEY0aIj41qgxMCP/iteneqXSIFZBp5vizPvaoIR3Um9xK7PGoW8giupGn+EPuxIA4cDM4vzOqOkiMPhz5XK0whEjkVzTo4+S0puvDZuwIsdiW9mxhJc7tgBNL0cYlWSYVkz4G/fslNfRPW5mYAM49f4fhtxPb5ok4Q2Lg9dPKVHO/Bgeu5woMc7RY0p1ej6D4CKFE6lymSDJpW0YHX/wqE9+cfEauh7xZcG0q9t2ta6F6fmX0agvpFyZo8aFbXeUBr7osSCJNgvavWbM/06niWrOvYX2xwWdhXmXSrbX8ZbabVohBK41 email@example.com"
+
+# ECS2
+
+instanceCount = "3"
+
+ami = "ami-0aaaa0000bbbbb000cc"
+
+keyName = "demo-salt-minions"
+
+instanceSize = "t2.micro"
+
+# Saltstack 
+
+saltEnv = "demo"
+
+saltMaster = "172.31.1.3"
