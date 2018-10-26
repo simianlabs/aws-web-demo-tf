@@ -1,9 +1,3 @@
-# variable "aws_access_key" {
-#   description = "Your AWS Access key"
-# }
-# variable "aws_secret_key" {
-#   description = "Your AWS Secret key"
-# }
 variable "awsRegion" {
   description = "AWS Default Region"
   default     = "eu-west-1"
@@ -69,4 +63,8 @@ variable "saltEnv" {
 variable "saltMaster" {
   description = "IP or hostname of existing saltmaster"
   default     = "saltmaster"
+}
+
+variable "public_key" {
+  description = "Publick key for keypair"
 }

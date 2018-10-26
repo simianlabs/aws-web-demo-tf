@@ -16,8 +16,6 @@ resource "aws_instance" "minion" {
   ami           = "${var.ami}"
   instance_type = "${var.instance_type}"
 
-  #   user_data              = "${data.template_cloudinit_config.serversCommon.rendered}"
-  #   user_data              = "${element(template_cloudinit_config.installSaltMinion.*.rendered, count.index)}"
   user_data = "${element(data.template_file.install_salt_minion.*.rendered, count.index)}"
 
   subnet_id              = "${var.subnet_id}"
