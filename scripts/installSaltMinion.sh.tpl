@@ -16,6 +16,7 @@ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 apt-get update
 apt-get install docker-ce
+apt install python-pip
 echo "=================================" >> /tmp/init.log
 echo "=================================" >> /tmp/init.log
 curl -L https://bootstrap.saltstack.com -o install_salt.sh  >> /tmp/init.log
@@ -34,4 +35,4 @@ systemctl enable salt-minion  >> /tmp/init.log
 systemctl restart salt-minion  >> /tmp/init.log
 
 echo "Cloud init end at: `date`" >> /tmp/init.log
-curl -X POST --data-urlencode "payload={\"channel\": \"#aws-iot\", \"username\": \"AWS Cloud-init\", \"text\": \"Cloud-init nished on \``hostname`\` machine.\", \"icon_emoji\": \":ghost:\"}" https://hooks.slack.com/services/${token}
+curl -X POST --data-urlencode "payload={\"channel\": \"#aws-iot\", \"username\": \"AWS Cloud-init\", \"text\": \"Cloud-init fnished installing on \``hostname`\` machine on ``date``\", \"icon_emoji\": \":ghost:\"}" https://hooks.slack.com/services/${token}
