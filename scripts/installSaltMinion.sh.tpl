@@ -34,4 +34,4 @@ systemctl enable salt-minion  >> /tmp/init.log
 systemctl restart salt-minion  >> /tmp/init.log
 
 echo "Cloud init end at: `date`" >> /tmp/init.log
-curl -X POST --data-urlencode "payload={\"channel\": \"#aws-iot\", \"username\": \"AWS Cloud-init\", \"text\": \"Cloud-init nished on \``hostname`\` machine.\", \"icon_emoji\": \":ghost:\"}" https://hooks.slack.com/services/${token}
+curl -X POST --data-urlencode "payload={\"channel\": \"#aws-iot\", \"username\": \"AWS Cloud-init\", \"text\": \"Cloud-init fnished installing on \``hostname`\` machine on ``date``\", \"icon_emoji\": \":ghost:\"}" https://hooks.slack.com/services/${token}
