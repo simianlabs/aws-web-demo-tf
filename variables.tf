@@ -49,6 +49,10 @@ variable "keyName" {
   default     = "demo-salt-minions"
 }
 
+variable "slack_token" {
+  description = "TOKEN from slack webhook url: XXXXXX/XXXXXXX/XXXXXXXXXXXXXXX"
+}
+
 variable "instanceSize" {
   description = "AWS instance offering id"
   default     = "t2.micro"

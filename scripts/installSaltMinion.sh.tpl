@@ -7,9 +7,15 @@ echo "127.0.0.1 ${hostname}" >> /etc/hosts
 ufw allow 80
 ufw allow 443
 
-apt install apache2 -y >> /tmp/init.log
-systemctl enable apache2 >> /tmp/init.log
-systemctl restart apache2 >> /tmp/init.log
+# apt install apache2 -y >> /tmp/init.log
+# systemctl enable apache2 >> /tmp/init.log
+# systemctl restart apache2 >> /tmp/init.log
+
+apt-get install apt-transport-https ca-certificates curl software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+apt-get update
+apt-get install docker-ce
 echo "=================================" >> /tmp/init.log
 echo "=================================" >> /tmp/init.log
 curl -L https://bootstrap.saltstack.com -o install_salt.sh  >> /tmp/init.log
@@ -28,3 +34,4 @@ systemctl enable salt-minion  >> /tmp/init.log
 systemctl restart salt-minion  >> /tmp/init.log
 
 echo "Cloud init end at: `date`" >> /tmp/init.log
+curl -X POST --data-urlencode "payload={\"channel\": \"#aws-iot\", \"username\": \"AWS Cloud-init\", \"text\": \"Cloud-init nished on \``hostname`\` machine.\", \"icon_emoji\": \":ghost:\"}" https://hooks.slack.com/services/${token}
