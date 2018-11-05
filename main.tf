@@ -18,6 +18,7 @@ module "ec2-instance" {
 
   saltMaster = "${var.saltMaster}"
   saltEnv    = "${var.saltEnv}"
+  slackToken = "${var.slack_token}"
 }
 
 resource "aws_elb" "web" {

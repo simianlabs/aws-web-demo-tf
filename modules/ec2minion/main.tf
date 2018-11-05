@@ -7,6 +7,7 @@ data "template_file" "install_salt_minion" {
     hostname   = "${var.name}-${format("%02d", count.index+1)}"
     masterNode = "${var.saltMaster}"
     minionEnv  = "${var.saltEnv}"
+    token      = "${var.slackToken}"
   }
 }
 
